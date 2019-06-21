@@ -1,0 +1,34 @@
+{
+  "name": "workshop-live",
+  "version": "1.0.0",
+  "description": "Workshop en vivo para Zemoga",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monoguerin/workshop-live.git"
+  },
+  "author": "Cesar Guerrero <mono@zemoga.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monoguerin/workshop-live/issues"
+  },
+  "homepage": "https://github.com/monoguerin/workshop-live#readme",
+  "dependencies": {
+    "inquirer": "^6.3.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0"
+  }
+}
