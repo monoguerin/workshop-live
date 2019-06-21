@@ -7,7 +7,7 @@ const handleClick = () => {
 
 const Account = () => (
   <div>
-    <h1>Welcome to my Account!!</h1>
+    <h1>Welcome to my asdasd!!</h1>
     <Button variant="contained" color="primary" onClick={handleClick}>Hola account!</Button>
   </div>
 );
