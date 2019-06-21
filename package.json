@@ -21,6 +21,7 @@
   "homepage": "https://github.com/monoguerin/workshop-live#readme",
   "dependencies": {
     "@material-ui/core": "^4.1.1",
+    "@material-ui/styles": "^4.1.1",
     "inquirer": "^6.3.1",
     "next": "^8.1.0",
     "react": "^16.8.6",
