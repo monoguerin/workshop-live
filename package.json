@@ -4,9 +4,10 @@
   "description": "Workshop en vivo para Zemoga",
   "main": "index.js",
   "scripts": {
-    "dev": "node server",
+    "dev": "pm2 start server --watch --no-daemon",
     "build": "next build",
     "start": "NODE_ENV=production node server",
+    "lint": "eslint pages components",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
@@ -22,13 +23,18 @@
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/styles": "^4.1.1",
+    "apollo-boost": "^0.4.3",
+    "es6-promise": "^4.2.8",
     "express": "^4.17.1",
     "express-graphql": "^0.8.0",
     "graphql": "^14.3.1",
     "graphql-tools": "^4.0.5",
     "inquirer": "^6.3.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^8.1.0",
+    "pm2": "^3.5.1",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
