@@ -1,3 +1,4 @@
+import useDeleteArray from './hooks/useDeleteArray';
 import Post from './Post';
 
 const POSTS = [
@@ -33,8 +34,17 @@ const POSTS = [
   },
 ];
 
-const Posts = () => (
-  POSTS.map(Post)
-);
+const Posts = () => {
+  const [posts, removePost] = useDeleteArray(POSTS);
+
+  return (
+    posts
+      .map(props => ({
+        ...props,
+        onClick: removePost,
+      }))
+      .map(Post)
+  );
+};
 
 export default Posts;
