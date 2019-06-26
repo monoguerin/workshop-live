@@ -6,25 +6,30 @@ const useQuery = (query, options = {}) => {
   const [error, setError] = useState(false);
   const [data, setData] = useState();
 
-  client.query({
-    query,
-    ...options,
-  }).then((result) => {
-    if (result.errors) {
-      setError(result.errors);
-    }
+  const fetchData = () => {
+    client.query({
+      query,
+      ...options,
+    }).then((result) => {
+      if (result.errors) {
+        setError(result.errors);
+      }
 
-    setData(result.data);
-  }).catch((e) => {
-    setError(e);
-  }).finally(() => {
-    setLoading(false);
-  });
+      setData(result.data);
+    }).catch((e) => {
+      setError(e);
+    }).finally(() => {
+      setLoading(false);
+    });
+  };
+
+  fetchData();
 
   return {
     data,
     loading,
     error,
+    fetchData,
   };
 };
 

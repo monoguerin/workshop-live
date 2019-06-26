@@ -72,8 +72,8 @@ const POSTS = [
 //   }
 // }
 
-const Posts = () => {
-  const [posts, setPosts] = useState(POSTS);
+const usePosts = (initialPosts) => {
+  const [posts, setPosts] = useState(initialPosts);
   const removePost = useCallback((index) => {
     const newPosts = [
       ...posts,
@@ -83,6 +83,18 @@ const Posts = () => {
 
     setPosts(newPosts);
   }, [posts]);
+
+  return {
+    posts,
+    removePost,
+  };
+};
+
+const Posts = () => {
+  const {
+    posts,
+    removePost,
+  } = usePosts(POSTS);
 
   return (
     <div>
