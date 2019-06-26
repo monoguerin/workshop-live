@@ -1,6 +1,12 @@
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+
 const PORT = process.env.PORT || 3000;
+
+console.log('publicRuntimeConfig', publicRuntimeConfig);
 
 module.exports = {
   PORT,
-  HOST: console.log(process.env) || process.env.HOST || `http://localhost:${PORT}`,
+  HOST: process.env.HOST || `http://localhost:${PORT}`,
 };
