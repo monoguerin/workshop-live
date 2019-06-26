@@ -1,4 +1,4 @@
-import getConfig from 'next/config';
+const getConfig = require('next/config');
 
 const { publicRuntimeConfig } = getConfig();
 
