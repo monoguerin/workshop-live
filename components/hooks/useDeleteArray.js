@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 const useDeleteArray = (initialValue) => {
   const [values, setValues] = useState(initialValue);
@@ -12,6 +12,10 @@ const useDeleteArray = (initialValue) => {
 
     setValues(newValues);
   }, [values]);
+
+  useEffect(() => {
+    setValues(initialValue);
+  }, [initialValue]);
 
   return [values, removeValue];
 };
