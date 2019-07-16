@@ -4,10 +4,9 @@
   "description": "Workshop en vivo para Zemoga",
   "main": "index.js",
   "scripts": {
-    "dev": "pm2 start server --watch",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server",
-    "heroku-postbuild": "npm run build"
+    "start": "next start"
   },
   "repository": {
     "type": "git",
