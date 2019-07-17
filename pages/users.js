@@ -6,9 +6,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import useQuery from '../components/hooks/useQuery';
 import usersQuery from '../components/graphql/usersQuery';
-import Loading from '../components/Loading';
+import { runQuery } from '../components/hooks/useQuery';
 
 const useStyles = makeStyles({
   card: {
@@ -63,26 +62,24 @@ const User = ({
 
 const UsersCard = ({ users }) => users.map(User);
 
-const Users = () => {
+const Users = ({
+  users,
+}) => (
+  <Grid container spacing={3}>
+    <UsersCard users={users} />
+  </Grid>
+);
+
+Users.getInitialProps = async () => {
   const {
     data,
-    loading,
     error,
-  } = useQuery(usersQuery);
+  } = await runQuery(usersQuery);
 
-  if (error) {
-    return null;
-  }
-
-  return (
-    loading
-      ? <Loading />
-      : (
-        <Grid container spacing={3}>
-          <UsersCard users={data.users} />
-        </Grid>
-      )
-  );
+  return {
+    users: data.users || [],
+    error,
+  };
 };
 
 export default Users;
